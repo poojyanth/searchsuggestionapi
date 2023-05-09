@@ -9,6 +9,11 @@ app.use(express.urlencoded({ extended: true }));
 
 const port = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+    }
+);
+
 app.get('/suggest/:q', (req, res) => {
     https.get(`https://www.google.com/complete/search?client=chrome&q=${req.params.q}`, (resp) => {
     let data = '';
