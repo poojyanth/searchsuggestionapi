@@ -17,10 +17,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-overflow: ellipsis;
             text-align: center;
             justify-content: center;
             margin:5vh 0 ;
-            width: 100vw;
+            width: 100%;
+        }
+        .content a{
+            text-overflow: ellipsis;
+            width: inherit;
         }
         footer{
             display: flex;
@@ -32,7 +37,7 @@
             justify-content: center;
             margin:1vh 0 ;
             border-top: 1px solid black;
-            width: 100vw;
+            width: 100%;
             background-color: bisque;
             
             padding: 1rem;
@@ -45,7 +50,7 @@
     <p>Search Suggest API is a simple API that returns a list of suggested search terms based on the user's input.</p>
     <h3>Usage</h3>
     <p>Send a GET request to the following URL:</p>
-    <a href="https://searchsuggestionapinodejs.herokuapp.com/suggest/query" >https://searchsuggestionapinodejs.herokuapp.com/suggest/query</a>
+    <a href="https://searchsuggestionapinodejs.herokuapp.com/suggest/query" >https://searchsuggestionapinodejs. herokuapp.com/suggest/query</a>
     <p>with your URL parameters as 'query'</p>
     </div>
     <div class="content">
