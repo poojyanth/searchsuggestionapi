@@ -13,14 +13,17 @@ app.set('view engine', 'ejs');
 
 const port = process.env.PORT || 7070;
 
+// make a variable that counts the number of requests
 let count = 0;
 
 app.get('/', (req, res) => {
-    res.render('home')
+    console.log(count)
+    res.render('home',{count});
     }
 );
 
 app.get('/suggest/:q', (req, res) => {
+    // increment the number of requests
     count++;
     https.get(`https://www.google.com/complete/search?client=chrome&q=${req.params.q}`, (resp) => {
     let data = '';
