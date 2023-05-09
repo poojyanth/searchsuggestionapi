@@ -19,7 +19,7 @@
             align-items: center;
             text-align: center;
             justify-content: center;
-            height: 100vh;
+            margin:10vh 0 ;
             width: 100vw;
         }
     </style>
@@ -30,9 +30,25 @@
     <p>Search Suggest API is a simple API that returns a list of suggested search terms based on the user's input.</p>
     <h3>Usage</h3>
     <p>Send a GET request to the following URL:</p>
-    <a href="https://searchsuggestionapinodejs.herokuapp.com/suggest/query" ><code>https://searchsuggestionapinodejs.herokuapp.com/suggest/query</code></a>
+    <a href="https://searchsuggestionapinodejs.herokuapp.com/suggest/query" >https://searchsuggestionapinodejs.herokuapp.com/suggest/query</a>
     <p>with your URL parameters as 'query'</p>
     </div>
+    <div class="content">
+        <h4>Try Entering 'Mobile phones'</h4>
+        <form action="#">
+            <label for="query">Query:</label>
+            <input type="text" id="query" name="query" placeholder="Enter your query here">
+            <input type="submit" class="submit" value="SEND">
+        </form>
+    </div>
 
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = document.querySelector('#query').value;
+            window.location.href = `https://searchsuggestionapinodejs.herokuapp.com/suggest/${query}`;
+        })
+    </script>
 </body>
 </html>
