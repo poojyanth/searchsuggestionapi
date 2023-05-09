@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 const port = process.env.PORT || 7070;
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('<h1></h1>Search Suggest</h1><p>Search Suggest API is working</p><p>Try <a href="/suggest/india">/suggest/india</a></p>');
     }
 );
 
