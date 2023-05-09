@@ -1,7 +1,9 @@
 const https = require('https');
+const cors = require('cors');
 const express = require('express');
 const bodyparser = require("body-parser");
 const { get } = require('http');
+app.use(cors());
 const app = express();
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(express.json());
