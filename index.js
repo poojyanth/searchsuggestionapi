@@ -9,14 +9,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.set('view engine', 'ejs');
+
 const port = process.env.PORT || 7070;
 
+let count = 0;
+
 app.get('/', (req, res) => {
-    res.send('<h1>Search Suggest</h1><p>Search Suggest API is working</p><p>Try <a href="/suggest/india">/suggest/india</a></p>');
+    res.render('home')
     }
 );
 
 app.get('/suggest/:q', (req, res) => {
+    count++;
     https.get(`https://www.google.com/complete/search?client=chrome&q=${req.params.q}`, (resp) => {
     let data = '';
     
